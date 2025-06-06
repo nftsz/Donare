@@ -11,9 +11,9 @@ Plataforma web que conecta pessoas que querem doar itens usados com quem precisa
 ## 🛠 Tecnologias Utilizadas
 
 ### Frontend
-- HTML5 semântico
-- CSS3 moderno (Flexbox, Grid, Variáveis CSS)
-- JavaScript (ES6+)
+- HTML5 
+- CSS3 
+- JavaScript
 - [Font Awesome](https://fontawesome.com/) para ícones
 - Google Fonts (Poppins e Bebas Neue)
 
