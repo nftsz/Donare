@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donare - Doe itens que não usa mais</title>
+    <link rel="stylesheet" href="style/home.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <nav>
+        <!-- Header -->
+        <div class="nav_header">
+            <div class="nav_logo">
+                <a href="landing.html">D<span>♥</span>NARE</a>
+            </div>
+
+            <div class="search_bar">
+                <input type="text" placeholder="Pesquisar itens...">
+                <button><i class="fas fa-search"></i></button>
+            </div>
+
+            <a href="perfil.html" class="profile_icon">
+                <i class="fas fa-user-circle"></i>
+            </a>
+
+            <button class="btn create_ad">Criar Anúncio</button>
+        </div>
+    </nav>
+
+    <main class="home_container">
+
+        <!-- Categorias -->
+        <aside class="categories_sidebar">
+            <h3>Categorias</h3>
+            <ul>
+                <li><a href="#"><i class="fas fa-tshirt"></i> Roupas</a></li>
+                <li><a href="#"><i class="fas fa-couch"></i> Móveis</a></li>
+                <li><a href="#"><i class="fas fa-book"></i> Livros</a></li>
+                <li><a href="#"><i class="fas fa-gamepad"></i> Eletrodomésticos</a></li>
+                <li><a href="#"><i class="fas fa-utensils"></i> Utensílios Domésticos</a></li>
+                <li><a href="#"><i class="fas fa-bicycle"></i> Esportes</a></li>
+                <li><a href="#"><i class="fas fa-child"></i> Brinquedos</a></li>
+                <li><a href="#"><i class="fas fa-tools"></i> Ferramentas</a></li>
+            </ul>
+        </aside>
+
+        <!-- Anuncios-->
+        <section class="items_list">
+            <div class="item_card">
+                <div class="item_image">
+                    <img src="https://img.olx.com.br/images/64/648504416351283.webp"
+                        alt="Sofá em bom estado">
+                </div>
+                <div class="item_info">
+                    <div>
+                        <h3>Sofá Retrátil</h3>
+                        <div class="item_meta">
+                            <span><strong>Categoria:</strong> Móveis</span>
+                            <span><strong>Data:</strong> 15/05/2023</span>
+                        </div>
+                        <div class="item_description">
+                            <strong>Descrição:</strong>
+                            <p>Estou doando este sofá retrátil em bom estado de conservação. Ele é confortável, ideal
+                                para sala ou quarto, e tem braços e encostos ajustáveis. É perfeito para quem precisa de
+                                uma peça prática e funcional. Retirada no local. Interessados, favor entrar em contato!</p>
+                        </div>
+                    </div>
+                    <div class="item_actions">
+                       <a href="item.html"><button class="btn view_item">Ver Item</button></a> 
+                    </div>
+                </div>
+            </div>
+
+            <div class="item_card">
+                <div class="item_image">
+                    <img src="https://electrolux.vtexassets.com/arquivos/ids/213999-800-800?v=638778143124170000&width=800&height=800&aspect=true"
+                        alt="Geladeira">
+                </div>
+                <div class="item_info">
+                    <div>
+                        <h3>Geladeira Frost Free</h3>
+                        <div class="item_meta">
+                            <span><strong>Categoria:</strong> Eletrodomésticos</span>
+                            <span><strong>Data:</strong> 10/05/2023</span>
+                        </div>
+                        <div class="item_description">
+                            <strong>Descrição:</strong>
+                            <p>Geladeira usada mas funcionando perfeitamente. 310L. Modelo 2018, com freezer embaixo.
+                                Está limpa e higienizada. Fazemos entrega para região metropolitana.</p>
+                        </div>
+                    </div>
+                    <div class="item_actions">
+                        <button class="btn view_item">Ver Item</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="item_card">
+                <div class="item_image">
+                    <img src="https://www.saolivetti.com.br/wp-content/uploads/2021/07/livros-culinaria-1.jpg"
+                        alt="Livros">
+                </div>
+                <div class="item_info">
+                    <div>
+                        <h3>Coleção de livros</h3>
+                        <div class="item_meta">
+                            <span><strong>Categoria:</strong> Livros</span>
+                            <span><strong>Data:</strong> 05/05/2023</span>
+                        </div>
+                        <div class="item_description">
+                            <strong>Descrição:</strong>
+                            <p>Coleção de livros em ótimo estado, com diversos títulos e gêneros. Estamos doando porque
+                                precisamos liberar espaço em casa. Perfeitos para quem ama leitura ou quer aumentar sua
+                                biblioteca.</p>
+                        </div>
+                    </div>
+                    <div class="item_actions">
+                        <button class="btn view_item">Ver Item</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal criar anuncio -->
+    <div class="modal" id="adModal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+
+            <form id="adForm">
+                <h2>Criar Novo Anúncio</h2>
+
+                <!-- Campo de Imagem -->
+                <div class="form-group image-upload">
+                    <label for="itemImage">
+                        <i class="fas fa-camera"></i>
+                        <span>Adicionar Fotos</span>
+                        <input type="file" id="itemImage" accept="image/*" multiple style="display:none">
+                    </label>
+                    <div class="image-preview" id="imagePreview"></div>
+                </div>
+
+                <!-- Nome do Produto -->
+                <div class="form-group">
+                    <input type="text" id="itemName" placeholder="Nome do Produto*" required>
+                </div>
+
+                <!-- Categoria -->
+                <div class="form-group">
+                    <select id="itemCategory" required>
+                        <option value="" disabled selected>Selecione uma Categoria*</option>
+                        <option value="clothing">Roupas</option>
+                        <option value="furniture">Móveis</option>
+                        <option value="electronics">Eletrônicos</option>
+                        <option value="books">Livros</option>
+                        <option value="toys">Brinquedos</option>
+                        <option value="others">Outros</option>
+                    </select>
+                </div>
+
+                <!-- Descrição -->
+                <div class="form-group">
+                    <textarea id="itemDescription" rows="4"
+                        placeholder="Descrição detalhada* (Estado do item, medidas, etc.)" required></textarea>
+                </div>
+
+                <!-- Contato -->
+                <div class="form-group">
+                    <input type="text" id="itemContact" placeholder="Como entrar em contato* (WhatsApp, email, etc.)"
+                        required>
+                </div>
+
+                <button type="submit" class="btn submit-btn">Publicar Anúncio</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Notificação -->
+    <div id="notification" class="notification-hidden">
+        <div class="notification-content">
+            <i class="fas fa-check-circle"></i>
+            <span>Anúncio publicado com sucesso!</span>
+        </div>
+    </div>
+
+    
+
+    <script src="scripts/modalAnuncio.js"></script>
+</body>
+
+</html>

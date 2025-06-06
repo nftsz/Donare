@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donare - Visualizar Item</title>
+    <link rel="stylesheet" href="style/item.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <nav>
+        <div class="nav_header">
+            <div class="nav_logo">
+                <a href="home.html">D<span>♥</span>NARE</a>
+            </div>
+
+            <div class="search_bar">
+                <input type="text" placeholder="Pesquisar itens...">
+                <button><i class="fas fa-search"></i></button>
+            </div>
+
+            <a href="perfil.html" class="profile_icon">
+                <i class="fas fa-user-circle"></i>
+            </a>
+
+            <button class="btn create_ad">Criar Anúncio</button>
+        </div>
+    </nav>
+
+    <main class="item_container">
+        <!-- Seção principal do item -->
+        <section class="item_view">
+            <div class="item_gallery">
+                <div class="main_image">
+                    <img src="https://img.olx.com.br/images/64/648504416351283.webp" alt="Sofá Retrátil">
+                </div>
+                <div class="thumbnail_container">
+                    <div class="thumbnail active">
+                        <img src="https://img.olx.com.br/images/64/648504416351283.webp" alt="Sofá - Foto 1">
+                    </div>
+                    <div class="thumbnail">
+                        <img src="https://img.olx.com.br/images/64/643501652696607.webp" alt="Sofá - Foto 2">
+                    </div>
+                    <div class="thumbnail">
+                        <img src="https://img.olx.com.br/images/64/646531412582040.webp" alt="Sofá - Foto 3">
+                    </div>
+                </div>
+            </div>
+
+            <div class="item_details">
+                <h1>Sofá Retrátil</h1>
+                <div class="item_meta">
+                    <span><i class="fas fa-tag"></i> Móveis</span>
+                    <span><i class="fas fa-clock"></i> Publicado há 2 dias</span>
+                </div>
+
+                <div class="item_description">
+                    <h3>Descrição</h3>
+                    <p>Estou doando este sofá retrátil em bom estado de conservação. Ele é confortável, ideal para sala
+                        ou quarto, e tem braços e encostos ajustáveis. É perfeito para quem precisa de uma peça prática
+                        e funcional.
+                        Retirada no local. Interessados, favor entrar em contato!</p>
+                </div>
+
+                <div class="item_contact">
+                    <h3>Contato do Doador</h3>
+                    <div class="contact_card">
+                        <div class="user_info">
+                            <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Maria Silva">
+                            <div>
+                                <strong>Maria Silva</strong>
+                                <span>Membro desde 2022</span>
+                            </div>
+                        </div>
+                        <div class="contact_actions">
+                            <a href="https://wa.me/5511999999999" class="btn whatsapp-btn">
+                                <i class="fab fa-whatsapp"></i> WhatsApp
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Itens relacionados -->
+        <section class="related_items">
+            <h2>Itens Relacionados</h2>
+            <div class="items_grid">
+                <div class="related_item">
+                    <img src="https://img.olx.com.br/images/87/877507178687012.webp" alt="Sofá Rasgado">
+                    <h3>Sofá usado 2 lugares</h3>
+                    <p>Doando esse sofá, está rasgado conforme fotos
+                        Mas o assento está em perfeito estado, o restante da pra reformar</p>
+                    <a href="item.html" class="btn view-btn">Ver Item</a>
+                </div>
+
+                <div class="related_item">
+                    <img src="https://img.olx.com.br/images/90/902597403859359.webp" alt="Sofá preto">
+                    <h3>Sofá preto 2 lugares</h3>
+                    <p>Estou doando este sofá, pois não utilizo mais
+                        Chamar no WhatsApp, moro no rs, ddd de quando eu era do Paraná </p>
+                    <a href="item.html" class="btn view-btn">Ver Item</a>
+                </div>
+
+                <div class="related_item">
+                    <img src="https://img.olx.com.br/images/19/199567539884588.webp" alt="Sofá de Canto">
+                    <h3>Sofá branco 2 lugares</h3>
+                    <p>Sofá branco confortável e de madeira resistente. Se trocar o estofado fica perfeiro. To me
+                        desfazendo
+                        pq comprei outro maior e a preciso urgente liberar espaço. O sofa tem 1,80m de lar....</p>
+                    <a href="item.html" class="btn view-btn">Ver Item</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal criar anuncio -->
+    <div class="modal" id="adModal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+
+            <form id="adForm">
+                <h2>Criar Novo Anúncio</h2>
+
+                <!-- Campo de Imagem -->
+                <div class="form-group image-upload">
+                    <label for="itemImage">
+                        <i class="fas fa-camera"></i>
+                        <span>Adicionar Fotos</span>
+                        <input type="file" id="itemImage" accept="image/*" multiple style="display:none">
+                    </label>
+                    <div class="image-preview" id="imagePreview"></div>
+                </div>
+
+                <!-- Nome do Produto -->
+                <div class="form-group">
+                    <input type="text" id="itemName" placeholder="Nome do Produto*" required>
+                </div>
+
+                <!-- Categoria -->
+                <div class="form-group">
+                    <select id="itemCategory" required>
+                        <option value="" disabled selected>Selecione uma Categoria*</option>
+                        <option value="clothing">Roupas</option>
+                        <option value="furniture">Móveis</option>
+                        <option value="electronics">Eletrônicos</option>
+                        <option value="books">Livros</option>
+                        <option value="toys">Brinquedos</option>
+                        <option value="others">Outros</option>
+                    </select>
+                </div>
+
+                <!-- Descrição -->
+                <div class="form-group">
+                    <textarea id="itemDescription" rows="4"
+                        placeholder="Descrição detalhada* (Estado do item, medidas, etc.)" required></textarea>
+                </div>
+
+                <!-- Contato -->
+                <div class="form-group">
+                    <input type="text" id="itemContact" placeholder="Como entrar em contato* (WhatsApp, email, etc.)"
+                        required>
+                </div>
+
+                <button type="submit" class="btn submit-btn">Publicar Anúncio</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Notificação -->
+    <div id="notification" class="notification-hidden">
+        <div class="notification-content">
+            <i class="fas fa-check-circle"></i>
+            <span>Anúncio publicado com sucesso!</span>
+        </div>
+    </div>
+
+    <script>
+        // Troca de imagens principal/thumbnail
+        document.querySelectorAll('.thumbnail').forEach(thumb => {
+            thumb.addEventListener('click', function () {
+                document.querySelector('.thumbnail.active').classList.remove('active');
+                this.classList.add('active');
+                const newSrc = this.querySelector('img').src;
+                document.querySelector('.main_image img').src = newSrc;
+            });
+        });
+    </script>
+
+    <script src="scripts/modalAnuncio.js"></script>
+</body>
+
+</html>

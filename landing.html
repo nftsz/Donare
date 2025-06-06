@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Donare - Doe itens que não usa mais</title>
+    <link rel="stylesheet" href="style/landing.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <nav>
+        <div class="nav_header">
+            <div class="nav_logo">
+                <a href="landing.html">D<span>♥</span>NARE</a>
+            </div>
+            <div class="nav_links" id="nav_links">
+                <ul>
+                    <li><a href="#como-funciona">Como Funciona</a></li>
+                    <li><a href="#beneficios">Benefícios</a></li>
+                    <li><a href="#depoimentos">Depoimentos</a></li>
+                    <li><a href="#duvidas">Dúvidas</a></li>
+                </ul>
+            </div>
+            <div class="nav_buttons" id="nav_buttons">
+                <button class="btn sign_up">Cadastre-se</button>
+                <button class="btn sign_in">Entrar</button>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Janela de Logine Cadastro -->
+    <div class="modal" id="authModal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+
+            <form id="authForm">
+                <h2 id="formTitle">Entrar</h2>
+
+                <input type="email" placeholder="E-mail" required />
+                <input type="password" placeholder="Senha" required />
+
+                <!-- Campos extras que só vao aparecer no cadastro -->
+                <div class="signup-fields" style="display: none">
+                    <input type="text" placeholder="Nome completo" />
+                    <input type="tel" placeholder="Celular" />
+                </div>
+
+                <button type="submit" id="submitBtn">Entrar</button>
+
+                <p class="toggle-form">
+                    <a href="#" id="toggleSignup">Crie uma</a>
+                </p>
+            </form>
+        </div>
+    </div>
+
+    <!-- Secao inicial de apresentacao -->
+    <section class="hero">
+        <div class="hero_container">
+            <div class="hero_content">
+                <h2>Doe o que <span>não usa</span>,</h2>
+                <h1><span>ganhe espaço</span> no seu <span>lar</span>.</h1>
+                <p>
+                    Conectamos pessoas que querem doar itens em bom estado com quem
+                    precisa deles. Economize, ajude o meio ambiente e faça parte dessa
+                    corrente do bem.
+                </p>
+                <button class="btn hero_btn">Doe Aqui!</button>
+            </div>
+            <div class="hero_image">
+                <img src="assets/Image.png" />
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats_section">
+        <div class="stats_container">
+            <div class="stat_item">
+                <h3>+10.000</h3>
+                <p>Itens doados</p>
+            </div>
+            <div class="stat_item">
+                <h3>+5.000</h3>
+                <p>Usuários ativos</p>
+            </div>
+            <div class="stat_item">
+                <h3>100%</h3>
+                <p>Gratuito</p>
+            </div>
+            <div class="stat_item">
+                <h3>+100</h3>
+                <p>Cidades atendidas</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Como Funciona -->
+    <section id="como-funciona" class="how_it_works">
+        <div class="section_header">
+            <h2>Como Funciona</h2>
+            <p class="section_subtitle">É simples, rápido e gratuito para todos</p>
+        </div>
+        <div class="steps_container">
+            <div class="step_card">
+                <div class="step_icon"><i class="fas fa-clipboard-list"></i></div>
+                <h3>1. Crie seu anúncio</h3>
+                <p>Descreva o item, adicione fotos e detalhes importantes</p>
+            </div>
+            <div class="step_card">
+                <div class="step_icon"><i class="fas fa-bell"></i></div>
+                <h3>2. Receba interessados</h3>
+                <p>Pessoas próximas a você verão seu item e entrarão em contato</p>
+            </div>
+            <div class="step_card">
+                <div class="step_icon"><i class="fas fa-handshake"></i></div>
+                <h3>3. Combine a entrega</h3>
+                <p>Defina o local e horário para a retirada do item</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefícios -->
+    <section id="beneficios" class="benefits">
+        <div class="benefits_container">
+            <div class="benefits_content">
+                <h2>Benefícios para Todos</h2>
+                <div class="benefit_item">
+                    <i class="fas fa-leaf"></i>
+                    <div>
+                        <h3>Sustentabilidade</h3>
+                        <p>
+                            Reduza o desperdício e dê nova vida a objetos que seriam
+                            descartados
+                        </p>
+                    </div>
+                </div>
+                <div class="benefit_item">
+                    <i class="fas fa-hand-holding-heart"></i>
+                    <div>
+                        <h3>Ajuda ao Próximo</h3>
+                        <p>Seu item pode fazer a diferença na vida de quem precisa</p>
+                    </div>
+                </div>
+                <div class="benefit_item">
+                    <i class="fas fa-home"></i>
+                    <div>
+                        <h3>Organização</h3>
+                        <p>Libere espaço em casa sem culpa</p>
+                    </div>
+                </div>
+            </div>
+            <div class="benefits_image">
+                <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
+                    alt="Benefícios da doação" />
+            </div>
+        </div>
+    </section>
+
+    <!-- Depoimentos -->
+    <section id="depoimentos" class="testimonials">
+        <div class="section_header">
+            <h2>O que dizem sobre nós</h2>
+            <p class="section_subtitle">Histórias reais de pessoas impactadas</p>
+        </div>
+        <div class="testimonials_container">
+            <div class="testimonial_card">
+                <div class="testimonial_content">
+                    <p>
+                        "Doei minha geladeira antiga e, em menos de uma semana, ela já estava ajudando uma família que precisava.
+                        Foi uma experiência incrível!"
+                    </p>
+                </div>
+                <div class="testimonial_author">
+                    <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Carlos Silva" />
+                    <div>
+                        <h4>Carlos Silva</h4>
+                        <span>São Paulo - SP</span>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial_card">
+                <div class="testimonial_content">
+                    <p>
+                        "Participar dessa iniciativa me inspirou a ajudar mais pessoas.
+                        Hoje, mobilizo amigos e familiares para doarem também!"
+                    </p>
+                </div>
+                <div class="testimonial_author">
+                    <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Ana Oliveira" />
+                    <div>
+                        <h4>Ana Oliveira</h4>
+                        <span>Belo Horizonte - MG</span>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial_card">
+                <div class="testimonial_content">
+                    <p>
+                        "Como professora, recebi livros e materiais que transformaram
+                        minha sala de aula. Gratidão!"
+                    </p>
+                </div>
+                <div class="testimonial_author">
+                    <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Mariana Costa" />
+                    <div>
+                        <h4>Mariana Costa</h4>
+                        <span>Rio de Janeiro - RJ</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta_section">
+        <div class="cta_container">
+            <h2>Pronto para fazer parte dessa corrente do bem?</h2>
+            <p>
+                Junte-se a milhares de pessoas que já estão transformando vidas
+                através da doação
+            </p>
+            <div class="cta_buttons">
+                <button class="btn primary_btn">Cadastre-se Gratuitamente</button>
+                <button class="btn secondary_btn">Saiba Mais</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="duvidas" class="faq">
+        <div class="section_header">
+            <h2>Dúvidas Frequentes</h2>
+            <p class="section_subtitle">
+                Encontre respostas para as perguntas mais comuns
+            </p>
+        </div>
+        <div class="faq_container">
+            <div class="faq_item">
+                <button class="faq_question">
+                    Como me cadastro na plataforma?<i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="faq_answer">
+                    <p>
+                        O cadastro é rápido e gratuito! Basta clicar em "Cadastre-se" no
+                        menu superior, preencher seus dados básicos e confirmar seu
+                        e-mail.
+                    </p>
+                </div>
+            </div>
+            <div class="faq_item">
+                <button class="faq_question">
+                    Quais tipos de itens posso doar?<i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="faq_answer">
+                    <p>
+                        Você pode doar qualquer item em bom estado de conservação: móveis,
+                        eletrodomésticos, roupas, livros, eletrônicos, brinquedos e muito
+                        mais.
+                    </p>
+                </div>
+            </div>
+            <div class="faq_item">
+                <button class="faq_question">
+                    Existe algum custo para usar a plataforma?<i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="faq_answer">
+                    <p>
+                        Não! A Donare é 100% gratuita tanto para doadores quanto para quem
+                        recebe os itens. Nosso objetivo é facilitar a doação sem custos.
+                    </p>
+                </div>
+            </div>
+            <div class="faq_item">
+                <button class="faq_question">
+                    Como combino a entrega dos itens?<i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="faq_answer">
+                    <p>
+                        A plataforma oferece um chat interno para você combinar todos os
+                        detalhes diretamente com o interessado, incluindo local e horário
+                        de retirada.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer_container">
+            <div class="footer_col">
+                <h3 class="footer_logo">D<span>♥</span>NARE</h3>
+                <p>
+                    Plataforma que conecta pessoas que querem doar itens usados com quem
+                    precisa. Economize dinheiro e ajude o meio ambiente!
+                </p>
+                <div class="footer_socials">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+
+            <div class="footer_col">
+                <h4>Links Rápidos</h4>
+                <ul>
+                    <li><a href="#">Como Funciona</a></li>
+                    <li><a href="#">Sobre Nos</a></li>
+                </ul>
+            </div>
+
+            <div class="footer_col">
+                <h4>Para Doadores</h4>
+                <ul>
+                    <li><a href="#">Criar Anúncio</a></li>
+                    <li><a href="#">Minhas Doações</a></li>
+                </ul>
+            </div>
+
+            <div class="footer_col">
+                <h4>Para Receptores</h4>
+                <ul>
+                    <li><a href="#">Buscar Itens</a></li>
+                    <li><a href="#">Favoritos</a></li>
+                    <li><a href="#">Dúvidas Frequentes</a></li>
+                </ul>
+            </div>
+
+            <div class="footer_col">
+                <h4>Contato</h4>
+                <ul>
+                    <li><i class="fas fa-envelope"></i> donare@mail.com</li>
+                    <li><i class="fas fa-phone"></i> (83) 91234-5678</li>
+                    <li><i class="fas fa-map-marker-alt"></i> Paraiba, Brasil</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer_bar">
+            <p>© 2025 Donare. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="scripts/faqExpansao.js"></script>
+    <script src="scripts/modalLogin.js"></script>
+</body>
+
+</html>
