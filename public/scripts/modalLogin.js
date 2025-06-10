@@ -3,7 +3,9 @@
 // - reseta o estado do formulário.
 // - exibe a popup de autenticação.
 // - se o botão clicado for o de cadastro, chama a função e alterna para o formulário de cadastro.
-document.querySelectorAll('.sign_in, .sign_up').forEach(button => {
+
+// .hero_btn se trata do botao "Doe aqui" que também deve abrir o modal de autenticação
+document.querySelectorAll('.sign_in, .sign_up, .hero_btn').forEach(button => {
   button.addEventListener('click', () => {
     resetFormState();
     document.getElementById('authModal').style.display = 'block';
