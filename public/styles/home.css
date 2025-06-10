@@ -510,15 +510,16 @@ nav {
     position: relative;
   }
 
-  /* Barra de pesquisa (estado inicial: apenas ícone) */
+  /* Barra de pesquisa (estado inicial: apenas ícone) 
   .search_bar {
     display: flex;
     align-items: center;
-    width: 40px; /* Largura inicial (só ícone) */
+    width: 40px; /* Largura inicial (só ícone) 
     transition: all 0.3s ease;
     overflow: hidden;
     gap: 0;
   }
+  */
 
   .search_input {
     width: 0;
@@ -596,7 +597,7 @@ nav {
 
   .categories_sidebar {
     width: 100%;
-    margin-bottom: 1rem; /* Adiciona espaço entre a barra lateral e os itens */
+    margin-bottom: 1rem; 
   }
 
   .items_list {
@@ -604,7 +605,7 @@ nav {
   }
 
   .item_card {
-    flex-direction: column; /* Reorganiza as informações em pilha */
+    flex-direction: column; 
     align-items: center;
   }
 
@@ -619,7 +620,7 @@ nav {
   }
 
   .item_info h3 {
-    font-size: 1.1rem; /* Ajusta o tamanho do texto */
+    font-size: 1.1rem; 
   }
 
   .btn.view_item {
@@ -628,14 +629,14 @@ nav {
   }
 
   .modal-content {
-    width: 95%; /* Ajusta o tamanho do modal */
+    width: 95%; 
     padding: 1.5rem;
   }
 
   .form-group input,
   .form-group select,
   .form-group textarea {
-    padding: 0.6rem; /* Ajusta o espaçamento interno */
+    padding: 0.6rem; 
   }
 
   .image-upload {
