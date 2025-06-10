@@ -189,7 +189,7 @@ nav {
     text-align: center;
 }
 
-/* Lista de Itens */
+/* Lista de Itens - Versão Corrigida */
 .items_list {
     flex: 1;
     display: flex;
@@ -201,7 +201,7 @@ nav {
     background: white;
     border-radius: 8px;
     overflow: hidden;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.329);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
     transition: all 0.3s;
     display: flex;
 }
@@ -211,11 +211,6 @@ nav {
     height: 200px;
     flex-shrink: 0;
     overflow: hidden;
-    display: flex;
-    align-items: center; /* Centraliza verticalmente */
-    justify-content: center; /* Centraliza horizontalmente */
-    margin: 1rem; /* Adiciona espaço ao redor */
-    border-radius: 6px; /* Cantos arredondados na imagem */
 }
 
 .item_image img {
@@ -223,7 +218,6 @@ nav {
     height: 100%;
     object-fit: cover;
     transition: transform 0.5s;
-    border-radius: 4px; /* Cantos levemente arredondados na imagem */
 }
 
 .item_card:hover .item_image img {
@@ -499,103 +493,165 @@ nav {
     to { transform: translateX(150%); }
 }
 
-/* Mobile Styles */
 @media (max-width: 768px) {
-    :root {
-        --max-width: 100%; /* Ajusta para uso total da largura */
-    }
+  :root {
+    --max-width: 100%; /* Ajusta para uso total da largura */
+  }
 
-    nav {
-        padding: 0.5rem;
-    }
+  nav {
+    padding: 0.5rem;
+  }
 
-    .nav_header {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 0.5rem;
-    }
+  .nav_header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    position: relative;
+  }
 
-    .nav_logo a {
-        font-size: 1.8rem; /* Reduz tamanho da logo */
-    }
+  /* Barra de pesquisa (estado inicial: apenas ícone) 
+  .search_bar {
+    display: flex;
+    align-items: center;
+    width: 40px; /* Largura inicial (só ícone) 
+    transition: all 0.3s ease;
+    overflow: hidden;
+    gap: 0;
+  }
+  */
 
-    .search_bar {
-        margin: 0.5rem 0;
-        flex-direction: column;
-        align-items: stretch;
-    }
+  .search_input {
+    width: 0;
+    padding: 0;
+    border: none;
+    background: transparent;
+    transition: all 0.3s ease;
+  }
 
-    .search_bar input {
-        padding: 0.5rem;
-    }
+  .search_btn {
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+  }
 
-    .btn.create_ad {
-        font-size: 0.85rem; /* Reduz o botão de criar anúncio */
-        padding: 0.5rem 1rem;
-    }
+  .profile_icon {
+    margin-left: 0; 
+    margin-top: 4px; /* gambiarra que ajusta o alinhamento vertical */
+  }
 
-    .home_container {
-        flex-direction: column;
-        gap: 1rem;
-    }
+  /* Estado expandido (ativa via JS) */
+  .search_bar.active {
+    width: 180px; /* Largura da barra expandida */
+    position: absolute;
+    right: 50px; /* Alinhado com o ícone de perfil */
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
 
-    .categories_sidebar {
-        width: 100%;
-        margin-bottom: 1rem; /* Adiciona espaço entre a barra lateral e os itens */
-    }
+  .search_bar.active .search_input {
+    width: 140px;
+    padding: 0.5rem 1rem;
+  }
 
-    .items_list {
-        gap: 1rem;
-    }
+  /* Botão "Criar Anúncio" como ícone flutuante */
+  .btn.create_ad {
+    position: fixed;
+    bottom: 50px;
+    right: 30px;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    z-index: 100;
+    background-color: var(--primary-color);
+  }
 
-    .item_card {
-        flex-direction: column; /* Reorganiza as informações em pilha */
-        align-items: center;
-    }
+  /* Remove o texto e deixa apenas o ícone */
+  .btn.create_ad span {
+    display: none;
+  }
 
-    .item_image {
-        width: 100%;
-        max-width: 300px;
-        height: auto;
-    }
+  .btn.create_ad::before {
+    content: "+";
+    font-size: 1.8rem;
+    color: var(--white);
+  }
 
-    .item_info {
-        padding: 1rem;
-    }
+  /* Remove estilos antigos que não serão mais usados */
+  .nav_header {
+    flex-direction: initial; /* Remove o flex column */
+    align-items: initial;
+  }
 
-    .item_info h3 {
-        font-size: 1.1rem; /* Ajusta o tamanho do texto */
-    }
+  .home_container {
+    flex-direction: column;
+    gap: 1rem;
+  }
 
-    .btn.view_item {
-        padding: 0.5rem 1rem;
-        font-size: 0.85rem;
-    }
+  .categories_sidebar {
+    width: 100%;
+    margin-bottom: 1rem; 
+  }
 
-    .modal-content {
-        width: 95%; /* Ajusta o tamanho do modal */
-        padding: 1.5rem;
-    }
+  .items_list {
+    gap: 1rem;
+  }
 
-    .form-group input,
-    .form-group select,
-    .form-group textarea {
-        padding: 0.6rem; /* Ajusta o espaçamento interno */
-    }
+  .item_card {
+    flex-direction: column; 
+    align-items: center;
+  }
 
-    .image-upload {
-        padding: 1rem;
-    }
+  .item_image {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+  }
 
-    .btn.submit-btn {
-        padding: 0.6rem;
-        font-size: 0.9rem;
-    }
+  .item_info {
+    padding: 1rem;
+  }
 
-    #notification {
-        bottom: 10px;
-        right: 10px;
-        padding: 0.8rem;
-        font-size: 0.9rem;
-    }
+  .item_info h3 {
+    font-size: 1.1rem; 
+  }
+
+  .btn.view_item {
+    padding: 0.5rem 1rem;
+    font-size: 0.85rem;
+  }
+
+  .modal-content {
+    width: 95%; 
+    padding: 1.5rem;
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    padding: 0.6rem; 
+  }
+
+  .image-upload {
+    padding: 1rem;
+  }
+
+  .btn.submit-btn {
+    padding: 0.6rem;
+    font-size: 0.9rem;
+  }
+
+  #notification {
+    bottom: 10px;
+    right: 10px;
+    padding: 0.8rem;
+    font-size: 0.9rem;
+  }
 }
