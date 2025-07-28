@@ -17,11 +17,6 @@ Plataforma web que conecta pessoas que querem doar itens usados com quem precisa
 - [Font Awesome](https://fontawesome.com/) para ícones
 - Google Fonts (Poppins e Bebas Neue)
 
-### Backend (Sugerido para implementação futura)
-- Node.js com Express
-- Banco de dados MongoDB
-- Autenticação JWT
-
 ## 📂 Estrutura de Arquivos
 
 ```
